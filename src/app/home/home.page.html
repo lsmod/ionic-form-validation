@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      New account
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input
+          formControlName="userNameControl"
+          required="true"
+          placeholder="Username"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email address</ion-label>
+        <ion-input
+          formControlName="emailControl"
+          required="true"
+          type="email"
+          placeholder="Email address"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input
+          formControlName="passwordControl"
+          required="true"
+          type="password"
+          placeholder="Password"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button [disabled]="!formGroup.valid" type="submit">
+          <ion-icon name="checkmark"></ion-icon>
+          save
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
